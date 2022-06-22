@@ -1,0 +1,27 @@
+public static class Program
+{
+    public static void Main()
+    {
+
+        var random = new Random();
+        var array = new int[11];
+
+        for (var i = 0; i < array.Length; i++)
+        {
+            array[i] = random.Next(11);
+        }
+
+        Console.Write("Исходный массив: ");
+        Console.WriteLine(string.Join(", ", array));
+
+        int temp = array[array.Length - 1];
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            array[i] = array[i - 1];
+        }
+        array[0] = temp;
+
+        Console.Write("Конечный массив: ");
+        Console.WriteLine(string.Join(", ", array));
+    }
+}

@@ -1,0 +1,27 @@
+int n = 1;
+Console.WriteLine("Компьютер загадал число от 0 до 9. Попробуйте отгодать его за три попытки.");
+Console.WriteLine("Введите первое число:");
+
+Random rnd = new Random();
+int k = Convert.ToInt32(Console.ReadLine());
+int i = rnd.Next(10);
+while (n <= 3)
+{
+    if (i == k)
+    {
+        Console.WriteLine("Вы угадали! Компьютер загадал число " + k);
+        break;
+    }
+    else
+    {
+        n++;
+        if (n == 4)
+        {
+            Console.WriteLine("Попытки закончились. Компьютер загадал число " + i);
+            break;
+        }
+        
+        Console.WriteLine("Нет, это не число " + k + ". Попытка № " + n + ":");
+        k = Convert.ToInt32(Console.ReadLine());
+    }
+}

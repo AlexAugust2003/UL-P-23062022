@@ -1,0 +1,36 @@
+class Class
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите число");
+        int count = int.Parse(Console.ReadLine());
+        for (int i = 1; i < 1000; i++)
+        {
+            int i1 = i * i;
+            for (int j = 1; j < 1000; j++)
+            {
+                int j1 = j * j;
+                for (int y = 1; y < 1000; y++)
+                {
+                    int y1 = y * y;
+                    int i1j1 = i1 + j1;
+                    if (i1j1 == y1)
+                    {
+                        double S = (i * j) / 2;
+                        if (count > S)
+                        {
+                            Console.WriteLine($"Треугольник со сторонами a={i} b={j}c ={ y}");
+                            Console.WriteLine($"Площадь треугольника S={S} ");
+                        }
+                        else
+                        {
+                            goto остановка;
+                        }
+                    }
+                }
+            }
+        }
+    остановка:
+        Console.WriteLine();
+    }
+} 

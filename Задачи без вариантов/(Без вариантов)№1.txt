@@ -1,0 +1,63 @@
+class Class
+{
+    static void Main(string[] args)
+    {
+        int YEAR = 365;
+        int[] months = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    день:
+        Console.WriteLine("Введите число");
+        int day = int.Parse(Console.ReadLine());
+        if (day > 31)
+        {
+            Console.WriteLine("Ошибка : некорректное число");
+            goto день;
+        }
+    месяц:
+        Console.WriteLine("Введите номер месяца");
+        int month = int.Parse(Console.ReadLine());
+        if (month > 12)
+        {
+            Console.WriteLine("Ошибка : месяц не существует");
+            goto месяц;
+        }
+        for (int i = 0; i < months.Length; i++)
+        {
+            int l = month - 1;
+            if (i == l)
+            {
+                if (months[i] < day)
+                {
+                    Console.WriteLine("Ошибка : некорректное число");
+                    goto день;
+                }
+            }
+        }
+        Console.WriteLine("Введите год");
+        int year = int.Parse(Console.ReadLine());
+        int y1 = year % 4;
+        int y2 = year % 400;
+        int y3 = year % 100;
+        int smeshenie = 0;
+        int j = month - 1;
+        for (int i = 0; i < j; i++)
+        {
+            int k = months[i];
+            smeshenie = smeshenie + k;
+        }
+        if (y1 == 0)
+        {
+            if (y2 > 0 || y3 == 0)
+            {
+
+                goto count;
+            }
+            smeshenie++;
+            YEAR++;
+        }
+    count:
+        int Begin = smeshenie + day;
+        int End = YEAR - Begin;
+        Console.WriteLine($"Количество дней от начала года: {Begin}");
+        Console.WriteLine($"Количество дней до следующего года: {End}");
+    }
+}
