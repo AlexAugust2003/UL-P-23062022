@@ -1,0 +1,24 @@
+Console.WriteLine("Введите координаты первой вершины:");
+int x1 = int.Parse(Console.ReadLine());
+int y1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введите координаты второй вершины:");
+int x2 = int.Parse(Console.ReadLine());
+int y2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введите координаты третьей вершины:");
+int x3 = int.Parse(Console.ReadLine());
+int y3 = int.Parse(Console.ReadLine());
+
+int AB = (int)Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+int BC = (int)Math.Sqrt(Math.Pow((x3 - x2), 2) + Math.Pow((y3 - y2), 2));
+int AC = (int)Math.Sqrt(Math.Pow((x3 - x1), 2) + Math.Pow((y3 - y1), 2));
+
+if ((Math.Pow(AB, 2) + Math.Pow(AC, 2) == Math.Pow(BC, 2)) || (Math.Pow(AC, 2)+ Math.Pow(BC, 2) == Math.Pow(AB, 2)) || (Math.Pow(AB, 2) + Math.Pow(BC, 2) == Math.Pow(AC, 2)))
+{
+    Console.WriteLine("Треугольник является прямоугольным");
+}
+else
+{
+    Console.WriteLine("Треугольник не является прямоугольным");
+}

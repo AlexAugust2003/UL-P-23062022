@@ -1,0 +1,11 @@
+Console.WriteLine("Введите стоимость одной тетради:");
+int Ct = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введите стоимость одной обложки:");
+int Cb = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введие количество тетрадей:");
+int Kt = int.Parse(Console.ReadLine());
+
+int S = Kt * (Ct + Cb);
+Console.WriteLine("Стоимость покупки равна {0}", S);
